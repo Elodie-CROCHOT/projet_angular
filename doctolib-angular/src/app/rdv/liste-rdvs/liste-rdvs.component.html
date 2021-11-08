@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>PATIENT</th>
+      <th>MEDECIN</th>
+      <th>DETAIL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rdvs of listeRdvs">
+      <td>{{ rdvs.lastNamePatient }} {{ rdvs.firstNamePatient }}</td>
+      <td>{{ rdvs.lastNameDoctor }} {{ rdvs.firstNameDoctor }}</td>
+      <td><button (click)="onSelectedRdv(rdvs.id)" class=" btn">DETAIL</button></td>
+    </tr>
+  </tbody>
+</table>
+<ngx-spinner class="chargement">
+  <p>Un instant.</p>
+  <span>Je charge les données.</span>
+</ngx-spinner>

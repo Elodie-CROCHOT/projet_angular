@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>NOM</th>
+      <th>PRENOM</th>
+      <th>SPECIALITE</th>
+      <th>VILLE</th>
+      <th>DETAIL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let medecins of listeMedecins">
+      <td>{{ medecins.lastName }}</td>
+      <td>{{ medecins.firstName }}</td>
+      <td>{{ medecins.specialty }}</td>
+      <td>{{ medecins.townAddress }}</td>
+      <td><button (click)="onSelectedMedecin(medecins.id)" class=" btn">DETAIL</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ngx-spinner class="chargement">
+  <p>Un instant.</p>
+  <span>Je charge les données.</span>
+</ngx-spinner>

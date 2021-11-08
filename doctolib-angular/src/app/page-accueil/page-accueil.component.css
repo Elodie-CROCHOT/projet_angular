@@ -1,0 +1,15 @@
+#message-accueil {
+  color: #0C21CF;
+  font-size: 100px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding-top: 5%;
+}
+
+.btn {
+  background-color: #0C21CF;
+  color: #C4C8E3;
+  margin-right: 5%;
+  margin-left: 5%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

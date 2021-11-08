@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="titre">
+    <p>CONNEXION</p>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <form (ngSubmit)="connexion()" class="form">
+        <div>
+          <label>Email</label><br>
+          <input type="text" name="email" [(ngModel)]="emailForm">
+        </div>
+        <div><br>
+          <label>Mot de passe</label><br>
+          <input type="password" name="password" [(ngModel)]="passwordForm">
+        </div><br>
+        <div>
+          <label>Profil</label><br>
+          <select name="profilInput" [(ngModel)]="profilInputForm">
+            <option>Choisissez votre profil</option>
+            <option>Médecin</option>
+            <option>Patient</option>
+          </select>
+        </div><br>
+        <div>
+          <button class="btn" type="submit">CONNEXION</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

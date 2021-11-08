@@ -1,0 +1,557 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Doctolib Management",
+        "description": "Doctolib Management",
+        "version": "V1"
+    },
+    "paths": {
+        "/appointments": {
+            "get": {
+                "tags": [
+                    "appointments"
+                ],
+                "summary": "Returns a map of all appointment",
+                "description": "Returns a map of all appointment",
+                "operationId": "getAppointments",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AppointmentDTO"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    },
+                    "404": {
+                        "description": "No appointments found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "appointments"
+                ],
+                "summary": "Create an appointment",
+                "description": "Create an appointment",
+                "operationId": "createAppointment",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation but no content"
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    }
+                }
+            }
+        },
+        "/appointments/{id}": {
+            "get": {
+                "tags": [
+                    "appointments"
+                ],
+                "summary": "Returns an appointment according to ID",
+                "description": "Returns an appointment according to ID",
+                "operationId": "getAppointmentById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the appointment that needs to be searched",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DoctorDTO"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    },
+                    "404": {
+                        "description": "No appointments found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "appointments"
+                ],
+                "summary": "Update an appointment according to ID",
+                "description": "Update an appoitment according to ID",
+                "operationId": "updateAppointment",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the appointment that needs to be updated",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DoctorDTO"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "appointments"
+                ],
+                "summary": "Delete an appointment according to ID",
+                "description": "Delete an appointment according to ID",
+                "operationId": "deleteAppointment",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the appointment that needs to be deleted",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Successful operation but no content"
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    }
+                }
+            }
+        },
+        "/doctors": {
+            "get": {
+                "tags": [
+                    "doctors"
+                ],
+                "summary": "Returns a map of all doctor or a map of doctor according to a designated specialty",
+                "description": "Returns a map of all doctor or a map of doctor according to a designated specialty",
+                "operationId": "getDoctors",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DoctorDTO"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    },
+                    "404": {
+                        "description": "No doctors found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "doctors"
+                ],
+                "summary": "Create a doctor",
+                "description": "Create a doctor",
+                "operationId": "createDoctor",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation but no content"
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    }
+                }
+            }
+        },
+        "/doctors/{id}": {
+            "put": {
+                "tags": [
+                    "doctors"
+                ],
+                "summary": "Update a doctor according to ID",
+                "description": "Update a doctor according to ID",
+                "operationId": "updateDoctor",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the doctor that needs to be updated",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DoctorDTO"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "doctors"
+                ],
+                "summary": "Delete a doctor according to ID",
+                "description": "Delete a doctor according to ID",
+                "operationId": "deleteDoctor",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the doctor that needs to be deleted",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Successful operation but no content"
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    }
+                }
+            }
+        },
+        "/patients": {
+            "get": {
+                "tags": [
+                    "patients"
+                ],
+                "summary": "Returns a map of all patient or a map of patient according to a designated lastname",
+                "description": "Returns a map of all patient or a map of patient according to a designated lastname",
+                "operationId": "getPatients",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PatientDTO"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    },
+                    "404": {
+                        "description": "No patients found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "patients"
+                ],
+                "summary": "Create a patient",
+                "description": "Create a patient",
+                "operationId": "createPatient",
+                "responses": {
+                    "201": {
+                        "description": "Successful operation but no content"
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    }
+                }
+            }
+        },
+        "/patients/{id}": {
+            "put": {
+                "tags": [
+                    "patients"
+                ],
+                "summary": "Update a patient according to ID",
+                "description": "Update a patient according to ID",
+                "operationId": "updatePatient",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the patient that needs to be updated",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DoctorDTO"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "patients"
+                ],
+                "summary": "Delete a patient according to ID",
+                "description": "Delete a patient according to ID",
+                "operationId": "deletePatients",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the patient that needs to be deleted",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Successful operation but no content"
+                    },
+                    "500": {
+                        "description": "Please contact us"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AppointmentDTO": {
+                "title": "AppointmentDTO model",
+                "description": "AppointmentDTO model",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    "dateAppointment": {
+                        "title": "dateAppointment",
+                        "description": "dateAppointment",
+                        "type": "string",
+                        "format": "\\DateTime"
+                    },
+                    "hourAppointment": {
+                        "title": "hourAppointment",
+                        "description": "hourAppointment",
+                        "type": "string",
+                        "format": "\\DateTime"
+                    },
+                    "idPatient": {
+                        "title": "ID Patient",
+                        "description": "ID Patient",
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    "idDoctor": {
+                        "title": "ID Doctor",
+                        "description": "ID Doctor",
+                        "type": "integer",
+                        "format": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "DoctorDTO": {
+                "title": "DoctorDTO model",
+                "description": "DoctorDTO model",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    "email": {
+                        "title": "email",
+                        "description": "email",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "password": {
+                        "title": "password",
+                        "description": "password",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "lastName": {
+                        "title": "lastName",
+                        "description": "lastName",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "firstName": {
+                        "title": "firstName",
+                        "description": "firstName",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "specialty": {
+                        "title": "specialty",
+                        "description": "specialty",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "addressNum": {
+                        "title": "addressNum",
+                        "description": "addressNum",
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    "addressStreet": {
+                        "title": "addressStreet",
+                        "description": "addressStreet",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "postalCodeAddress": {
+                        "title": "postalCodeAddress",
+                        "description": "postalCodeAddress",
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    "townAddress": {
+                        "title": "townAddress",
+                        "description": "townAddress",
+                        "type": "string",
+                        "format": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "PatientDTO": {
+                "title": "PatientDTO model",
+                "description": "PatientDTO model",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    "email": {
+                        "title": "email",
+                        "description": "email",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "password": {
+                        "title": "password",
+                        "description": "password",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "lastName": {
+                        "title": "lastName",
+                        "description": "lastName",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "firstName": {
+                        "title": "firstName",
+                        "description": "firstName",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "birthDate": {
+                        "title": "birthDate",
+                        "description": "birthDate",
+                        "type": "string",
+                        "format": "datetime"
+                    },
+                    "addressNum": {
+                        "title": "addressNum",
+                        "description": "addressNum",
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    "addressStreet": {
+                        "title": "addressStreet",
+                        "description": "addressStreet",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "postalCodeAddress": {
+                        "title": "postalCodeAddress",
+                        "description": "postalCodeAddress",
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    "townAddress": {
+                        "title": "townAddress",
+                        "description": "townAddress",
+                        "type": "string",
+                        "format": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

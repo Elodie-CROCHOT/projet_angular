@@ -1,0 +1,11 @@
+<div *ngIf="rdvs" class="informations">
+  <p class="titre-item">NOM DU PATIENT</p>
+  <p>{{ rdvs.lastNamePatient }} {{ rdvs.firstNamePatient }}</p><br>
+  <p class="titre-item">NOM DU MEDECIN</p>
+  <p>{{ rdvs.lastNameDoctor }} {{ rdvs.firstNameDoctor }}</p><br>
+  <p class="titre-item">DATE DU RENDEZ-VOUS</p>
+  <p>{{ rdvs.dateAppointment}}</p><br>
+  <p class="titre-item">HEURE DU RENDEZ-VOUS</p>
+  <p>{{ rdvs.hourAppointment}}</p>
+  <p><button (click)="onDeletedRdv(rdvs.id)" class=" btn">Supprimer</button></p>
+</div>

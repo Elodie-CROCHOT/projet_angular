@@ -1,0 +1,13 @@
+<div *ngIf="patients" class="informations">
+  <p class="titre-item">NOM DE FAMILLE</p>
+  <p>{{ patients.lastName}}</p><br>
+  <p class="titre-item">PRENOM</p>
+  <p>{{ patients.firstName}}</p><br>
+  <p class="titre-item">DATE DE NAISSANCE</p>
+  <p>{{ patients.birthDate}}</p><br>
+  <p class="titre-item">ADRESSE</p>
+  <p>{{ patients.addressNum}} {{ patients.addressStreet }} {{ patients.postalCodeAddress }}
+    {{ patients.townAddress }}
+  </p><br>
+  <div><button class=" btn">PRENDRE RENDEZ-VOUS</button></div>
+</div>
